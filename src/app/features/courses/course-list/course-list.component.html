@@ -1,0 +1,18 @@
+<ng-content select="[list]"></ng-content>
+<div id="course_list" class="container-fluid" *ngFor="let course of courseList">
+    <div class="row">
+         <div class="col-sm-6">
+         <p><b>{{course.title}}</b></p>
+         <p>{{course.description}}</p>
+     </div>
+     <div class="col-sm-6">
+        <p><b>Authors:</b>&nbsp;{{course.authores}}</p>
+        <p><b>Duration:</b>&nbsp;{{transformDurationToHour(course.duration)}}</p>
+        <p><b>Created:</b>&nbsp;{{course.creationDate | date:'dd.MM.YYY'}}</p>
+        <br>
+        <!-- <ng-content select="[editButton]"></ng-content> -->
+         <app-button [IsEditable]="IsCourseEditable(course)" [showCourse]="ShowCourse"></app-button>
+    </div>
+      </div>
+   </div>
+

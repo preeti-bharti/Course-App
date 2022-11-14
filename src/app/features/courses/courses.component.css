@@ -1,0 +1,48 @@
+.courseList {
+    border-style: solid;
+    border-color: brown;
+}
+ 
+#course_info1{
+    float: left;
+    display:ruby-base ;
+}
+#course_infoe{
+    float: right;
+    display:contents
+}
+
+
+.primary-nav {
+    float: inline-start;
+    display:-webkit-flex;
+    display:flex;
+    list-style-type:none;;
+    justify-content:flex-end;
+    border-style: solid;
+    background: whitesmoke;
+    padding-left: 0px;
+    padding-top: 0px;
+    position: relative;
+    margin: 10px 0px 10px 50px;
+}
+
+.left {
+    color: green;
+    font-weight: 700
+}
+ #emptyList
+{
+    border: none;
+    color:black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    
+}
+h2{
+    text-align: center;
+}
