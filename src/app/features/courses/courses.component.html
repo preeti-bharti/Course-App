@@ -1,22 +1,16 @@
-<!-- <app-login></app-login> -->
 <app-header>
-        <app-login></app-login>
+    <app-login></app-login>
 </app-header>
 <div *ngIf="IsCoursesExists(courses)">
-<app-course-list [courseList]="courses">
-    <p id="p_list" list style="font-size:28px">Show list</p>
-    <p  editButton><app-button [showCourse]="ShowCourse"></app-button></p>
-</app-course-list>
+    <app-course-list [courseList]="courses">
+        <p id="p_list" list style="font-size:28px">Show list</p>
+        <p editButton>
+            <app-button [showCourse]="ShowCourse"></app-button>
+        </p>
+    </app-course-list>
 </div>
-<div  id="emptyList"*ngIf="false">
+<div id="emptyList" *ngIf="false">
     <h2>Your List Is Empty</h2>
     <h2>Please use the 'Add New Course' button to add your first course</h2>
     <button type="button" onClick="AddCourse()">Add New Course</button>
 </div>
-
-
-
-
-
-
-

@@ -9,9 +9,7 @@
         <p><b>Authors:</b>&nbsp;{{course.authores}}</p>
         <p><b>Duration:</b>&nbsp;{{transformDurationToHour(course.duration)}}</p>
         <p><b>Created:</b>&nbsp;{{course.creationDate | date:'dd.MM.YYY'}}</p>
-        <br>
-        <!-- <ng-content select="[editButton]"></ng-content> -->
-         <app-button [IsEditable]="IsCourseEditable(course)" [showCourse]="ShowCourse"></app-button>
+        <app-button [IsEditable]="IsCourseEditable(course)" [showCourse]="ShowCourse"></app-button>
     </div>
       </div>
    </div>
