@@ -1,0 +1,40 @@
+#outer
+{
+    width:100%;
+    text-align: center;
+    margin: 0px 0px 0px 0px
+}
+p{
+    cursor: pointer;
+    margin: 0px 0px 0px 20px;
+    
+}
+.inner
+{
+    display: inline-block;
+    /* margin: 0px 0px 0px 20px; */
+}
+p:hover
+{
+    color: blue;
+}
+
+p:active{
+ color: green;
+} 
+.icon:hover{
+    cursor: pointer;
+    font-size: 250px;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
