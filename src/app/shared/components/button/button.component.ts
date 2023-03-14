@@ -6,8 +6,7 @@ import {faPen,faTrash} from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./button.component.css']
 })
 export class ButtonComponent implements OnInit {
-@Input() showCourse: string="";
-@Input() IsEditable!:boolean;
+ @Input() buttonText: string="";
   faPen=faPen;
   faTrash=faTrash;
   constructor() { }

@@ -13,3 +13,8 @@
     float: right;
     padding-right: 20px;
 }
+.inner
+{
+    display: inline-block;
+    /* margin: 0px 0px 0px 20px; */
+}

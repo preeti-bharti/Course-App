@@ -1,1 +1,55 @@
-<p>registration works!</p>
+<app-header></app-header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <h3 class="text-center p-3">Registration</h3>
+            <form [formGroup]="registrationForm" >
+                <div class="p-2">
+                    <label class="pb-1"><b>Name</b></label><br>
+                    <input formControlName="name" class="input">
+                    <div class="error"
+                        *ngIf="registrationForm.get('name')?.invalid && (registrationForm.get('name')?.dirty || registrationForm.get('name')?.touched)">
+                        <div *ngIf="this.registrationForm.get('name')?.hasError('required')">
+                            Name is required.
+                        </div>
+                        <div *ngIf="this.registrationForm.get('name')?.hasError('minlength')">
+                            Please provide atleast 6 charecters
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2">
+                    <label class="pb-1"><b>Email</b></label><br>
+                    <input formControlName="email" isEmail class="input">
+                    <div class="error"
+                        *ngIf="registrationForm.get('email')?.invalid && (registrationForm.get('email')?.dirty || registrationForm.get('email')?.touched)">
+                        <div *ngIf="this.registrationForm.get('email')?.hasError('required')">
+                            Email is required.
+                        </div>
+                        <div *ngIf="this.registrationForm.get('email')?.hasError('isNotEmail')">
+                            Please Provide valid Email.
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2">
+                    <label class="pb-1"><b>Password</b></label><br>
+                    <input formControlName="password" class="input">
+                    <div class="error"
+                        *ngIf="registrationForm.get('password')?.invalid && (registrationForm.get('password')?.dirty || registrationForm.get('password')?.touched)">
+                        <div *ngIf="this.registrationForm.get('password')?.hasError('required')">
+                            Password is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="button">
+                    <app-button class="p-3" (click)="register()" text="Registration" [buttonText]="RegButtonText"></app-button>
+                </div>
+            </form>
+            <p class="text-center p-3">
+                If you have an account you can <br>
+                <a href="">Login</a>
+            </p>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>

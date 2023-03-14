@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
-
-import * as fromComponents from './components';
+import * as sharedCompDivPipe from './components';
 
 @NgModule({
-  declarations: [...fromComponents.components],
+  declarations: [...sharedCompDivPipe.componentsDirectivesPipes],
   imports: [
-    CommonModule,
-    FontAwesomeModule,  
+    CommonModule,FormsModule,FontAwesomeModule 
   ],
-  exports:[...fromComponents.components]
+  exports:[...sharedCompDivPipe.componentsDirectivesPipes]
 })
 export class SharedModule { 
 

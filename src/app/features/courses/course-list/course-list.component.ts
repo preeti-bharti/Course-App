@@ -1,5 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { CourseCard } from 'src/app/shared/models/course-card.model';
+import {faPen,faTrash} from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-course-list',
   templateUrl: './course-list.component.html',
@@ -7,6 +8,8 @@ import { CourseCard } from 'src/app/shared/models/course-card.model';
 })
 export class CourseListComponent implements OnInit {
   ShowCourse="Show Course";
+  faPen=faPen;
+  faTrash=faTrash;
   @Input() courseList:CourseCard[]=[];
   @Input() editableCourse!:boolean;
   constructor() { 

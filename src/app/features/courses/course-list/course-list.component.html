@@ -4,13 +4,15 @@
          <div class="col-sm-6">
          <p><b>{{course.title}}</b></p>
          <p>{{course.description}}</p>
-     </div>
-     <div class="col-sm-6">
+    </div>
+    <div class="col-sm-6">
         <p><b>Authors:</b>&nbsp;{{course.authores}}</p>
         <p><b>Duration:</b>&nbsp;{{transformDurationToHour(course.duration)}}</p>
         <p><b>Created:</b>&nbsp;{{course.creationDate | date:'dd.MM.YYY'}}</p>
-        <app-button [IsEditable]="IsCourseEditable(course)" [showCourse]="ShowCourse"></app-button>
+        <app-button [buttonText]="ShowCourse"></app-button>
+        <div *ngIf="IsCourseEditable(course)">
+        <p [hidden]="false" class="inner"><fa-icon  style= "font-size:25px" [icon]="faPen"></fa-icon></p>
+        <p [hidden]="false" class="inner"><fa-icon  style= "font-size:25px" [icon]="faTrash"></fa-icon></p>
     </div>
-      </div>
-   </div>
+</div>
 
