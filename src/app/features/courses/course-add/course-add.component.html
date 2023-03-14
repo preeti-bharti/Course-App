@@ -1,0 +1,80 @@
+<app-header></app-header>
+<div class="container-fluid" class="course-add-box">
+    <form [formGroup]="courseForm">
+        <div class="row">
+            <div class="col-sm-6">
+                <label class="pb-1"><b>Title</b></label><br>
+                <input formControlName="title">
+                <div class="error"
+                *ngIf="courseForm.get('title')?.invalid && (courseForm.get('title')?.dirty || courseForm.get('title')?.touched)">
+                <div *ngIf="this.courseForm.get('title')?.hasError('required')" id="errorMsg">
+                    Title is required.
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <app-button text="Create Course" (click)="SaveCourse()" buttonText="Create Course"></app-button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <label class="pb-1"><b>Description</b></label><br>
+            <textarea formControlName="description" class="input textarea"></textarea>
+            <div class="error"
+            *ngIf="courseForm.get('description')?.invalid && (courseForm.get('description')?.dirty || courseForm.get('description')?.touched)">
+            <div *ngIf="this.courseForm.get('description')?.hasError('required')" id="errorMsg">
+                Description is required.
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid container-fluid-border" class="author-add-box">
+    <div class="row">
+        <ng-container>
+            <div class="col-sm-6">
+                <h3 class="text-center"><b>Add authors</b></h3>
+                <label class="pb-1"><b>Author name</b></label><br>
+                <input formControlName="authorname" class="input">
+                <div class="error"
+                *ngIf="courseForm.get('authorname')?.invalid && (courseForm.get('authorname')?.dirty || courseForm.get('authorname')?.touched)">
+                <div *ngIf="this.courseForm.get('authorname')?.hasError('required')" id="errorMsg">
+                    Author name is required.
+                </div>
+            </div>
+            <app-button (click)="createAuthor()" buttonText="Create Author"></app-button>
+        </div>
+        <div class="col-sm-6">
+            <h3 class="text-center"><b>Authors List</b></h3>
+            <div class="container">
+                <ng-container *ngFor="let author of authors; let i = index">
+                    <div class="row pt-3">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-5">
+                            <p>{{author}}</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <app-button (click)="deleteAuthor(i)" buttonText="Delete Author"></app-button>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </ng-container>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <h3 class="text-center"><b>Duration</b></h3>
+        <label class="pb-2"><b>Duration</b></label><br>
+        <input formControlName="duration" class="input" type="number">
+        <p>Duration: <b>{{courseForm.get('duration')?.value | duration}}</b> hours</p>
+        <div class="error"
+        *ngIf="courseForm.get('duration')?.invalid && (courseForm.get('duration')?.dirty || courseForm.get('duration')?.touched)">
+        <div *ngIf="this.courseForm.get('duration')?.hasError('required')" id="errorMsg">
+            Duration is required.
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</form>
+</div> 

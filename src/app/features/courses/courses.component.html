@@ -1,0 +1,19 @@
+<app-header>
+</app-header>
+<app-search></app-search>
+<div class="container-fluid">
+    <div class="row">
+<div *ngIf="IsCoursesExists(courses)">
+    <app-course-list [courseList]="courses">
+        <p id="p_list" list  >Course list</p>
+    </app-course-list>
+</div>
+</div>
+<div class="row">
+<div id="emptyList" *ngIf="!IsCoursesExists(courses)" >
+    <h2>Your List Is Empty</h2>
+    <h2>Please use the 'Add New Course' button to add your first course</h2>
+    <app-button text="Create Course" (click)="AddCourse()" buttonText="Add New Course"></app-button>
+</div>
+</div>
+</div>

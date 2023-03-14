@@ -1,0 +1,16 @@
+.course-add-box{
+    margin: 5px 5px 5px 5px;
+    border-style: solid;
+    border-color: rgb(251, 0, 255);
+}
+.author-add-box{
+    margin: 3px 3px 3px 3px;
+    border-style: solid;
+    border-color:grey ;   
+}
+.row{
+    margin: 5px 5px 5px 5px;
+}
+#errorMsg{
+    color: brown;
+}

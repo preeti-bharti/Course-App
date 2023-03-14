@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <h3 class="text-center p-3">Login</h3>
+            <form [formGroup]="loginForm">
+                <div class="p-2">
+                    <label class="pb-1"><b>Email</b></label><br>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Enter email" 
+                        aria-label="email" aria-describedby="basic-addon1" formControlName="email" isEmail>
+                      </div>
+                    <div class="error"
+                        *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+                        <div *ngIf="this.loginForm.get('email')?.hasError('required')">
+                            Email is required.
+                        </div>
+                        <div *ngIf="this.loginForm.get('email')?.hasError('isNotEmail')">
+                            Please Provide valid Email.
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2">
+                    <label class="pb-1"><b>Password</b></label><br>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" formControlName="password" id="passwordInput"
+                        placeholder="Enter Password" aria-label="password" aria-describedby="basic-addon2">
+                        <span appTogglePassword  #pd='togglePassword' type="buton"class="input-group-text" id="basic-addon2">
+                            <div *ngIf="!pd._shown">
+                            <fa-icon [icon]="faeye"></fa-icon>
+                            </div>
+                            <div *ngIf="pd._shown">
+                            <fa-icon [icon]="faeyeslash"></fa-icon>
+                            </div>
+                        </span>
+                      </div>
+                    <div class="error"
+                        *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+                        <div *ngIf="this.loginForm.get('password')?.hasError('required')">
+                            Password is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="button">
+                    <app-button (click)="login()" class="p-3" text="Login" [buttonText]="ButtonText"></app-button>
+                </div>
+            </form>
+            <p class="text-center p-2">
+                If you don't have an account you can <br>
+                <a href="">Registration</a>
+                
+            </p>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
