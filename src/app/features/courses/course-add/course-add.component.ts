@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthorStoreService } from 'src/app/services/author-store.service';
+import { AuthorStoreService } from 'src/app/services/authors-store.service';
 import { CoursesStoreService } from 'src/app/services/courses-store.service';
-import { AuthorStateFacade } from 'src/app/store/author/authors.facade';
+import { AuthorStateFacade } from 'src/app/store/authors/authors.facade';
 import { CoursesStateFacade } from 'src/app/store/courses/courses.facade';
 
 @Component({

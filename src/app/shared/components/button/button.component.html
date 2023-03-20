@@ -1,8 +1,14 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <div class="row">
         <div class="col-sm-6">
         <div class="inner"><button class="button" >{{buttonText}}</button></div>
         </div>
   </div>
-</div>
+  <div *ngIf="iconName!= null" >
+    <button class="button"><fa-icon [icon]="iconName"></fa-icon></button>
+  </div>
+</div> -->
+
+<button *ngIf="buttonText!= null" type="button" class="button button-text">{{buttonText}}</button>
+<button *ngIf="iconName != null" class="button"><fa-icon [icon]="iconName"></fa-icon></button>
 

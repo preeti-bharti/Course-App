@@ -18,7 +18,7 @@
     </div>
 </div>  -->
 
-<app-course-card *ngFor="let course of courseList" [courseDetails]="courseDetail"
+<app-course-card *ngFor="let course of courseList" [course]="courseList"
     (showCourseEvent)="ShowCourse($event)">
     <div class="action-buttons" ActionButtons *ngIf="isCourseEditable">
         <app-button (click)="EditCourse(course)" [iconName]="faPen"></app-button>

@@ -23,7 +23,7 @@
         <p><b>Authors:</b>&nbsp;{{ GetAuthorNames(course.authores)}}</p>
         <p><b>Duration:</b>&nbsp;{{TransformDurationToHour(course.duration)}}</p>
         <p><b>Created:</b>&nbsp;{{course.creationDate | date:'dd.MM.YYY'}}</p>
-        <app-button [buttonText]="ShowCourse" (click)="showCourse(course)"></app-button>
+        <app-button (click)="showCourse(course)" buttonText="Show Course"></app-button>
         <ng-content select="[ActionButtons]"></ng-content>
 </div>
 

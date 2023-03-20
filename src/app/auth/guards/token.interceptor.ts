@@ -10,13 +10,13 @@ import { catchError, Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { SessionStorageService } from '../services/session-storage.service';
-//import { AuthStateFacade } from '../store/auth.facade';
+import { AuthStateFacade } from '../store/auth.facade';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
 
   constructor(private router: Router,
-    //private authService : AuthStateFacade,
+    private authService : AuthStateFacade,
     private sessionStorageService : SessionStorageService) { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {

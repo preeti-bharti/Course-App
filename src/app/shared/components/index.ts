@@ -10,9 +10,13 @@ import { DurationPipe } from '../pipes/duration.pipe';
 import { CreationDatePipe } from '../pipes/creation-date.pipe';
 import { StringJoinerPipe } from '../pipes/string-joiner.pipe';
 
+import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';
+
 export const componentsDirectivesPipes: any[]=[CommonComponent,ButtonComponent,HeaderComponent,SearchComponent,
     EmailValidatorDirective,TogglePasswordDirective,
-    DurationPipe,CreationDatePipe,StringJoinerPipe];
+    DurationPipe,CreationDatePipe,StringJoinerPipe,
+    ConfirmModalComponent
+];
 
 export * from './common/common.component'
 export * from './button/button.component'
@@ -25,3 +29,5 @@ export * from '../directive/toggle-password.directive'
 export * from '../pipes/duration.pipe'
 export * from '../pipes/creation-date.pipe'
 export * from '../pipes/string-joiner.pipe'
+
+export * from './confirm-modal/confirm-modal.component'

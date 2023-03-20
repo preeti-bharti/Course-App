@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { AuthStateFacade } from 'src/app/auth/store/auth.facade';
-import { AuthorStateFacade } from 'src/app/store/author/authors.facade';
+import { AuthorStateFacade } from 'src/app/store/authors/authors.facade';
 import { CoursesStateFacade } from 'src/app/store/courses/courses.facade';
 
 @Component({
