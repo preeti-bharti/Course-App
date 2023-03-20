@@ -1,0 +1,29 @@
+<!-- <div class="container outer-container">
+    <div class="row content">
+        <div class="col-sm-8">
+            <p class="course-title">{{courseDetails.title}}</p>
+            <p class="course-desc">{{courseDetails.description}}</p>
+        </div>
+        <div class="col-sm-4">
+            <p class="course-author rightside-content"><b>Authors: </b>{{GetAuthorNames(courseDetails.authors)}}</p>
+            <p class="course-duration rightside-content"><b>Duration: </b>{{ConvertMinutesToHours(courseDetails.duration)}}</p>
+            <p class="course-createdon rightside-content"><b>Created: </b>{{ConvertDateToSpecificFormat(courseDetails.creationDate)}}</p>
+            <app-button text="Show Course" (click)="showCourse(courseDetails)"></app-button>
+            <ng-content select="[ActionButtons]"></ng-content>
+        </div>
+    </div>
+</div> -->
+<div id="course_list" class="container-fluid">
+    <div class="row">
+         <div class="col-sm-6">
+         <p><b>{{course.title}}</b></p>
+         <p>{{course.description}}</p>
+    </div>
+    <div class="col-sm-6">
+        <p><b>Authors:</b>&nbsp;{{ GetAuthorNames(course.authores)}}</p>
+        <p><b>Duration:</b>&nbsp;{{TransformDurationToHour(course.duration)}}</p>
+        <p><b>Created:</b>&nbsp;{{course.creationDate | date:'dd.MM.YYY'}}</p>
+        <app-button (click)="showCourse(course)" buttonText="Show Course"></app-button>
+        <ng-content select="[ActionButtons]"></ng-content>
+</div>
+

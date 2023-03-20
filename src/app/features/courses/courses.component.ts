@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseCard } from '../../shared/models/course-card.model';
+//import { CourseCard } from '../../shared/models/course-card.model';
+import { Router } from '@angular/router';
+import { AuthStateFacade } from 'src/app/auth/store/auth.facade';
+import { CoursesStateFacade } from 'src/app/store/courses/courses.facade';
+import { UserFacade } from 'src/app/user/store/user.facade';
 
 
 @Component({
@@ -8,10 +12,20 @@ import { CourseCard } from '../../shared/models/course-card.model';
   styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent implements OnInit {
-  courses:CourseCard[];
-  iSEditable:boolean=false;
-  constructor() {
-     this.courses=[];
+  courses:any=[];
+  isAdmin : boolean = true;
+  constructor(public coursesStoreService : CoursesStateFacade, 
+    public userStoreService : UserFacade,
+    private authService : AuthStateFacade,
+    private router : Router) { 
+      this.userStoreService.isAdmin$.subscribe(data => this.isAdmin = data);
+      this.coursesStoreService.courses$.subscribe(data => {this.courses = data});
+      this.coursesStoreService.allCourses$.subscribe(data => {this.courses = data});
+
+    }
+  //iSEditable:boolean=false;
+  //constructor() {
+    // this.courses=[];
     //[
     // new CourseCard(
     //   'Java',
@@ -37,18 +51,27 @@ export class CoursesComponent implements OnInit {
     //   60,
     //   ['JetBrains'])]; 
     
-   }
+   //}
 
-  ngOnInit(): void {
     
+   ngOnInit(): void {
+    this.coursesStoreService.getAllCourses();
   }
-  IsCoursesExists(courses:CourseCard[]){
+
+  IsCoursesExists(courses:any[]){
     return this.courses.length>0;
   }
 
-  AddCourse()//course:CourseCard)
-  {
-    console.log("course Added!")
+  search(event : any){
+    this.coursesStoreService.getFilteredCourses(event);
+  }
+  logout(){
+    console.log('logout');
+    this.authService.logout();
+    this.authService.closeSession();
+  }
+  navigateToAddNewCoursePage(){
+    this.router.navigate(['courses/add']);
   }
  
 }

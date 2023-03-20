@@ -1,5 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
-import {faPen,faTrash} from '@fortawesome/free-solid-svg-icons';
+//import {faPen,faTrash} from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
@@ -7,8 +8,9 @@ import {faPen,faTrash} from '@fortawesome/free-solid-svg-icons';
 })
 export class ButtonComponent implements OnInit {
  @Input() buttonText: string="";
-  faPen=faPen;
-  faTrash=faTrash;
+ @Input() iconName? : IconDefinition;
+  //faPen=faPen;
+  //faTrash=faTrash;
   constructor() { }
   ngOnInit(): void {
   }
