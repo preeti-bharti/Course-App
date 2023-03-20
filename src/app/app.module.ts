@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginModule } from './features/login/login.module';
 import { RegistrationModule } from './features/registration/registration.module';
 import { SharedModule } from './shared/shared.module';
+import { AppRoutingModule } from './app.routing.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -17,7 +18,7 @@ import { SharedModule } from './shared/shared.module';
     FontAwesomeModule,
     CoursesModule,
     BrowserAnimationsModule,
-    LoginModule,RegistrationModule,SharedModule
+    LoginModule,RegistrationModule,SharedModule,AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

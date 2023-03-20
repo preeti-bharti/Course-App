@@ -9,12 +9,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CourseAddComponent } from './course-add/course-add.component';
 import { CourseEditComponent } from './course-edit/course-edit.component';
+import { CourseCardComponent } from './course-card/course-card.component';
+import { CoursesViewComponent } from './courses-view/courses-view.component';
 @NgModule({
   declarations: [
     CoursesComponent,
     CourseListComponent,
     CourseAddComponent,
-    CourseEditComponent
+    CourseEditComponent,
+    CourseCardComponent,
+    CoursesViewComponent
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,4 @@
-<app-header>
+<!-- <app-header>
 </app-header>
 <app-search></app-search>
 <div class="container-fluid">
@@ -16,4 +16,22 @@
     <app-button text="Create Course" (click)="AddCourse()" buttonText="Add New Course"></app-button>
 </div>
 </div>
+</div> -->
+<app-header>
+    <div isLoggedIn style="float:right;">
+        <span><b>Dave</b></span>
+        <app-button (click)="logout()" class="logout-button" text="Logout"></app-button>
+    </div>
+</app-header>
+<app-search (searchEvent)="search($event)" placeholder="search course"></app-search>
+<div *ngIf="IsCoursesExists(courses)">
+    <app-course-list [courseList]="courses" [isCourseEditable]="isAdmin">
+       <!-- // <p id="p_list" list  >Course list</p> -->
+    </app-course-list>
 </div>
+<div id="emptyList" *ngIf="!IsCoursesExists(courses)" >
+    <h2>Your List Is Empty</h2>
+    <h2>Please use the 'Add New Course' button to add your first course</h2>
+    <app-button text="Add New Course" (click)="navigateToAddNewCoursePage()" buttonText="Add New Course"></app-button>
+</div>
+<app-confirm-modal></app-confirm-modal> 

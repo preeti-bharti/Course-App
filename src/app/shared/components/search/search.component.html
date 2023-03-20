@@ -1,14 +1,16 @@
   <div class="container-fluid-border" class="search-box">
-  <div class="row" >
+    <form #searchForm="ngForm">
+    <div class="row" >
   <div class="form-outline"  class="col-sm-10">
-    <input type="search" id="form1" class="form-control" placeholder="search course" aria-label="Search" />
+    <input type="search" id="form1" class="form-control"  id="searchItem" [(ngModel)]="searchItem" placeholder="{{placeholder}}" aria-label="Search" />
   </div>
   <div class="col-sm-2">
-    <button type="button" class="btn btn-primary">
+    <button type="button" class="btn btn-primary" (click)="search()">
         <fa-icon  style= "font-size:16px" [icon]="fa_search"></fa-icon>
       </button>
     </div>
 </div>
+</form>
 </div>
 
   

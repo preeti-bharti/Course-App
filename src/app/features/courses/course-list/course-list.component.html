@@ -1,4 +1,4 @@
-<ng-content select="[list]"></ng-content>
+<!-- <ng-content select="[list]"></ng-content>
 <div id="course_list" class="container-fluid" *ngFor="let course of courseList">
     <div class="row">
          <div class="col-sm-6">
@@ -6,13 +6,22 @@
          <p>{{course.description}}</p>
     </div>
     <div class="col-sm-6">
-        <p><b>Authors:</b>&nbsp;{{course.authores}}</p>
+        <p><b>Authors:</b>&nbsp;{{ GetAuthorNames(course.authores)}}</p>
         <p><b>Duration:</b>&nbsp;{{transformDurationToHour(course.duration)}}</p>
         <p><b>Created:</b>&nbsp;{{course.creationDate | date:'dd.MM.YYY'}}</p>
         <app-button [buttonText]="ShowCourse"></app-button>
         <div *ngIf="IsCourseEditable(course)">
         <p [hidden]="false" class="inner"><fa-icon  style= "font-size:25px" [icon]="faPen"></fa-icon></p>
         <p [hidden]="false" class="inner"><fa-icon  style= "font-size:25px" [icon]="faTrash"></fa-icon></p>
+        <app-button (click)="editCourse(courseDetail)" [iconName]="faPen"></app-button>
+        <app-button (click)="deleteCourse(courseDetail)" [iconName]="faTrash"></app-button>
     </div>
-</div>
+</div>  -->
 
+<app-course-card *ngFor="let course of courseList" [courseDetails]="courseDetail"
+    (showCourseEvent)="ShowCourse($event)">
+    <div class="action-buttons" ActionButtons *ngIf="isCourseEditable">
+        <app-button (click)="EditCourse(course)" [iconName]="faPen"></app-button>
+        <app-button (click)="DeleteCourse(course)" [iconName]="faTrash"></app-button>
+    </div>
+</app-course-card>
